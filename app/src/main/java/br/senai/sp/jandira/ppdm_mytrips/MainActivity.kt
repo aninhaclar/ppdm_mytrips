@@ -48,7 +48,6 @@ fun LoginScreen() {
             .fillMaxSize()
             .background(Color.White)
     ) {
-
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
@@ -62,7 +61,6 @@ fun LoginScreen() {
                 .padding(24.dp),
             verticalArrangement = Arrangement.Center
         ) {
-
             Text(
                 text = "Login",
                 fontSize = 36.sp,
@@ -86,7 +84,6 @@ fun LoginScreen() {
                 Column(
                     modifier = Modifier.padding(16.dp)
                 ) {
-
                     OutlinedTextField(
                         value = email,
                         onValueChange = { email = it },
@@ -95,10 +92,7 @@ fun LoginScreen() {
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(12.dp)
                     )
-
                     Spacer(modifier = Modifier.height(16.dp))
-
-
                     OutlinedTextField(
                         value = password,
                         onValueChange = { password = it },
@@ -112,20 +106,23 @@ fun LoginScreen() {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-
-            Button(
-                onClick = { },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                shape = RoundedCornerShape(24.dp)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
             ) {
-                Text(text = "SIGN IN", fontSize = 18.sp)
+                Button(
+                    onClick = { /* Ação do botão */ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
+                    modifier = Modifier
+                        .width(120.dp)
+                        .height(40.dp),
+                    shape = RoundedCornerShape(24.dp)
+                ) {
+                    Text(text = "SIGN IN", fontSize = 14.sp)
+                }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
-
 
             Text(
                 text = buildAnnotatedString {
@@ -137,10 +134,9 @@ fun LoginScreen() {
                 fontSize = 14.sp,
                 color = Color.Gray,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth().clickable { }
+                modifier = Modifier.fillMaxWidth().clickable { /* Ação de Sign up */ }
             )
         }
-
 
         Box(
             modifier = Modifier
